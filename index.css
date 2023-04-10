@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+header{
+    padding: 16px 15px;
+    border-bottom: 1px solid #C6C6C6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+
+h1,
+p{
+    font-size: 13px;
+    margin: 0;
+}
+
+.comments p{
+    text-align: left;
+}
+
+
+.container{
+    margin: 0 auto;
+    width: 375px;
+    height: 67px;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    align-items: flex-start;
+}
+
+.user-avatar,
+.engagement{
+   display: flex;
+   padding: 22px 10px;
+}
+
+.engagement{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 0 16px 13px;
+}
+
+.icons{
+    width: 91px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.name-info{
+    padding-left: 7px;
+    text-align: left;
+}
+
+
+.post-img{
+    height: 375px;
+    width: 375px;
+}
+
+.oldgram-logo{
+    width: 127px;  
+}
+
+
+.avatar{
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    
+}
+
+.logo-engage{
+    width: 23px; 
+    cursor: pointer;
+}
+
+.likes,
+.logo-engage{
+    padding-bottom: 13px;
+}
+
+.logo-engage:hover,
+.logo-engage:focus{
+    width: 20px; 
+    transform: all .2s ease-in;
+}
+
+
+.username{
+    font-weight: 700;
+}
