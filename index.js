@@ -31,13 +31,21 @@ const posts = [
     }
 ]
 
-const postEl = document.getElementById("posts-el")
 
-renderPosts()
+  
+const postEl = document.getElementById("posts-el");
+
+
+
+renderPosts();
+
 function renderPosts() {
     let html = "";
 
     for (let i = 0; i < posts.length; i++) {
+        const likeId = `like-btn-${i}`;
+        const likedClass = posts[i].liked ? '-like' : '';
+
         html += `
             <div class="user-info">
                 <div class="user-avatar">
@@ -50,7 +58,7 @@ function renderPosts() {
                 <img src="${posts[i].post}" alt="" class="post-img">
                 <div class="engagement">
                     <div class="icons">
-                        <img src="/images/icon-heart${posts[i].liked ? '-like' : ''}.png" alt="" class="logo-engage like-count" data-index="${i}">
+                        <img id="${likeId}" src="/images/icon-heart${likedClass}.png" alt="" class="logo-engage like-count">
                         <img src="/images/icon-comment.png" alt="" class="logo-engage">
                         <img src="/images/icon-dm.png" alt="" class="logo-engage">
                     </div>
@@ -67,14 +75,20 @@ function renderPosts() {
 
     postEl.innerHTML = html;
 
-    const likeEl = document.querySelectorAll(".like-count");
 
-    likeEl.forEach(el => {
-        el.addEventListener("click", () => {
-            const index = el.dataset.index;
-            posts[index].liked = !posts[index].liked;
-            posts[index].likes += posts[index].liked ? 1 : -1;
+
+    for (let i = 0; i < posts.length; i++) {
+        const likeId = `like-btn-${i}`;
+        const likeEl = document.getElementById(likeId);
+
+        likeEl.addEventListener("click", () => {
+            if (posts[i].liked) {
+                posts[i].likes--;
+            } else {
+                posts[i].likes++;
+            }
+            posts[i].liked = !posts[i].liked;
             renderPosts();
         });
-    });
+    }
 }
